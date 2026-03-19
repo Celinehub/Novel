@@ -1,0 +1,12 @@
+#!/bin/bash
+# 用法: ./write.sh "第一章_标题.md" "正文内容"
+TITLE="$1"
+CONTENT="$2"
+REPO="/home/minimax/.openclaw/workspace-celine/novel"
+cd "$REPO"
+echo "# $TITLE" > "$TITLE"
+echo "" >> "$TITLE"
+echo "$CONTENT" >> "$TITLE"
+git add "$TITLE"
+git commit -m "📖 $TITLE"
+echo "✅ 已提交并推送: $TITLE"
